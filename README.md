@@ -1,2 +1,13 @@
 # Random-Password-Generator
-This code generates a random password of a specified length using a combination of uppercase letters, lowercase letters, numbers, and special characters. It can be useful for creating strong passwords for various applications.
+
+import random
+import string
+
+def generate_password(length):
+    characters = string.ascii_letters + string.digits + string.punctuation
+    password = ''.join(random.choice(characters) for _ in range(length))
+    return password
+
+password_length = 10
+random_password = generate_password(password_length)
+print(f"Random password: {random_password}")
